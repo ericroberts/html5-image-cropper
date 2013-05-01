@@ -1,0 +1,65 @@
+@import "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400";
+@import "bootstrap.less";
+
+body {
+  background: #fff;
+}
+
+#placeholder {
+  @border: 5px;
+  @width: 600px;
+  @height: 300px;
+
+  .border-radius(25px);
+  .box-shadow(inset 0 0 5px rgba(0,0,0,0.1));
+  .transition(0.2s);
+
+  width: @width;
+  height: @height;
+  margin: -(@border+(@height/2)) 0 0 -(@border+(@width/2));
+  border: @border dashed #ddd;
+
+  position: absolute;
+  top: 50%; left: 50%;
+
+  background: #f9f9f9;
+
+  color: #888;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 24pt;
+  font-weight: 300;
+  line-height: @height;
+  text-align: center;
+
+  opacity: 100;
+
+  &.hidden {
+    opacity: 0;
+  }
+  &.hover {
+    .box-shadow(inset 0 0 10px rgba(0,0,0,0.2));
+
+    width: @width + @border*2;
+    height: @height + @border*2;
+    border-width: 0;
+
+    background: darken(#f9f9f9,10);
+
+    p {
+      content: "Drop!";
+    }
+  }
+}
+
+canvas {
+  .transition(0.2s);
+
+  position: absolute;
+  top: 50%; left: 50%;
+
+  opacity: 0;
+
+  &.visible {
+    opacity: 100;
+  }
+}
