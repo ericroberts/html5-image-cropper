@@ -5254,6 +5254,11 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
 body {
   background: #fff;
 }

@@ -17,17 +17,16 @@
           drag: [false,false,false,false],
           touch: [0,0,0,0],
           all: false
-        },
-        selection: null;
+        }
 
     function init() {
       eventBindings();
     }
 
     function eventBindings() {
-      placeholder.addEventListener('drop', drop, false);
-      placeholder.addEventListener('dragover', hover, false);
-      placeholder.addEventListener('dragleave', hover, false);
+      body.addEventListener('drop', drop, false);
+      body.addEventListener('dragover', hover, false);
+      body.addEventListener('dragleave', hover, false);
 
       window.onresize = function(event) {
         viewfinder.width = window.innerWidth;
@@ -40,7 +39,7 @@
     function hover(event) {
       event.stopPropagation();
       event.preventDefault();
-      event.target.className = (event.type == "dragover" ? "hover" : "");
+      placeholder.className = (event.type == "dragover" ? "hover" : "");
     }
 
     function drop(event) {
@@ -72,8 +71,6 @@
       }
       img.src = event.target.result;
     }
-
-    function drawSelection
   }
   
   var cropper = new Cropper();
